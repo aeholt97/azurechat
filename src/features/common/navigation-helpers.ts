@@ -8,7 +8,9 @@ const userEmails = process.env.USER_EMAIL_ADDRESSES?.split(",").map((email) =>
     email.toLowerCase().trim()
   );
 
-const user = getCurrentUser();
+(async () => {
+    const user = await getCurrentUser();
+};
 
 type Page = "extensions" | "persona" | "prompt" | "chat" | "settings" | "unauthorized";
 
