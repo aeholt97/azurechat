@@ -10,7 +10,7 @@ const userEmails = process.env.USER_EMAIL_ADDRESSES?.split(",").map((email) =>
 
 (async () => {
     const user = await getCurrentUser();
-};
+})();
 
 type Page = "extensions" | "persona" | "prompt" | "chat" | "settings" | "unauthorized";
 
