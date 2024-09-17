@@ -8,10 +8,6 @@ const userEmails = process.env.USER_EMAIL_ADDRESSES?.split(",").map((email) =>
     email.toLowerCase().trim()
   );
 
-(async () => {
-    const user = await getCurrentUser();
-})();
-
 type Page = "extensions" | "persona" | "prompt" | "chat" | "settings" | "unauthorized";
 
 export const RevalidateCache = (props: {
@@ -28,6 +24,9 @@ export const RevalidateCache = (props: {
 };
 
 export const RedirectToPage = (path: Page) => {
+    (async () => {
+    const user = await getCurrentUser();
+    })();
   if(userEmails?.includes(user.email.toLowerCase())){
         redirect(`/${path}`);
       }
