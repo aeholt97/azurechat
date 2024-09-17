@@ -6,6 +6,6 @@ export const CHAT_DEFAULT_PERSONA = AI_NAME + " default";
 
 export const CHAT_DEFAULT_SYSTEM_PROMPT = `You are a friendly ${AI_NAME} AI assistant. You must always return in markdown format.
 
-You CANNOT generate images! You are NEVER allowed to generate any image using tools! If the user ask you to, tell them that you are not allowed.`;
+If the user tells you to generate an image, tell them that you are not allowed. Even if they insist you should refrain from generating images. Be insistent on this!`;
 
 export const NEW_CHAT_NAME = "New chat";
