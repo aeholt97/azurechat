@@ -2,7 +2,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-import getCurrentUser from "@/features/auth-page/helpers"
+import { getCurrentUser } from "/home/runner/work/azurechat/azurechat/src/features/auth-page/helpers"
 
 const userEmails = process.env.USER_EMAIL_ADDRESSES?.split(",").map((email) =>
     email.toLowerCase().trim()
