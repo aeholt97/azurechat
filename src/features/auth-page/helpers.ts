@@ -3,6 +3,10 @@ import { getServerSession } from "next-auth";
 import { RedirectToPage } from "../common/navigation-helpers";
 import { options } from "./auth-api";
 
+const userEmails = process.env.USER_EMAIL_ADDRESSES?.split(",").map((email) =>
+    email.toLowerCase().trim()
+  );
+
 export const userSession = async (): Promise<UserModel | null> => {
   const session = await getServerSession(options);
   if (session && session.user) {
