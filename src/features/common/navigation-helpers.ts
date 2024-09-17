@@ -2,12 +2,6 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-import { getCurrentUser } from "/home/runner/work/azurechat/azurechat/src/features/auth-page/helpers"
-
-const userEmails = process.env.USER_EMAIL_ADDRESSES?.split(",").map((email) =>
-    email.toLowerCase().trim()
-  );
-
 type Page = "extensions" | "persona" | "prompt" | "chat" | "settings" | "unauthorized";
 
 export const RevalidateCache = (props: {
@@ -24,14 +18,7 @@ export const RevalidateCache = (props: {
 };
 
 export const RedirectToPage = (path: Page) => {
-    (async () => {
-    const user = await getCurrentUser();
-    })();
-  if(userEmails?.includes(user.email.toLowerCase())){
-        redirect(`/${path}`);
-      }
-  else{redirect(`/unathorized`);
-      }
+  redirect(`/${path}`);
 };
 
 export const RedirectToChatThread = (chatThreadId: string) => {
