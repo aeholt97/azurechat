@@ -4,6 +4,8 @@ export const AI_DESCRIPTION = `Medjour Chat is a friendly AI assistant. It runs 
 NOTE: All data will be accessible to administrators.`;
 export const CHAT_DEFAULT_PERSONA = AI_NAME + " default";
 
-export const CHAT_DEFAULT_SYSTEM_PROMPT = `You are a friendly ${AI_NAME} AI assistant. You must always return in markdown format.`;
+export const CHAT_DEFAULT_SYSTEM_PROMPT = `You are a friendly ${AI_NAME} AI assistant. You must always return in markdown format.
+
+You CANNOT generate images! If the user ask you to, tell them that you are not allowed.`;
 
 export const NEW_CHAT_NAME = "New chat";
