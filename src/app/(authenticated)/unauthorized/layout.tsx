@@ -1,4 +1,9 @@
-export const metadata = {
-  title: AI_NAME,
-  description: AI_NAME,
-};
+import React from 'react';
+
+const HelloWorld: React.FC = () => (
+  <div>
+    Hello world
+  </div>
+);
+
+export default HelloWorld;
