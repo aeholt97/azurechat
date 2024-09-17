@@ -12,6 +12,11 @@ const configureIdentityProvider = () => {
     email.toLowerCase().trim()
   );
 
+  const userEmails = process.env.USER_EMAIL_ADDRESSES?.split(",").map((email) =>
+    email.toLowerCase().trim()
+  );
+
+
   if (process.env.AUTH_GITHUB_ID && process.env.AUTH_GITHUB_SECRET) {
     providers.push(
       GitHubProvider({
@@ -47,7 +52,10 @@ const configureIdentityProvider = () => {
               adminEmails?.includes(profile.email.toLowerCase()) ||
               adminEmails?.includes(profile.preferred_username.toLowerCase()),
           };
-          return newProfile;
+          if(userEmails?.includes(newProfile.email.toLowerCase())){
+            //If userprofile is in the environment variable, USER_EMAIL_ADDRESSES, return newProfile
+            return newProfile;
+           }
         },
       })
     );
